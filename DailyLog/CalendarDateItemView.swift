@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalendarDateItemView: View {
 	var date: Int
-	var isLogged: Bool
+	var logCount: Int
 	
     var body: some View {
 		Text("\(date)")
@@ -17,14 +17,18 @@ struct CalendarDateItemView: View {
 			.background(
 				Circle()
 					.foregroundColor(
-						.gray.opacity(isLogged ? 0.3 : 0.0)
+						getIntesity()
 					)
 			)
     }
+	
+	private func getIntesity() -> Color {
+		return .teal.opacity(0.2 * Double(logCount))
+	}
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-		CalendarDateItemView(date: 2, isLogged: true)
+		CalendarDateItemView(date: 2, logCount: 4)
     }
 }

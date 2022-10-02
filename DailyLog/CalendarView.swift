@@ -17,7 +17,7 @@ struct CalendarView: View {
 			LazyVGrid(columns: columnsConfiguration) {
 				
 				ForEach(1..<32) { day in
-					CalendarDateItemView(date: day, isLogged: .random())
+					CalendarDateItemView(date: day, logCount: Int.random(in: 0..<6))
 				}
 			}
 		}
