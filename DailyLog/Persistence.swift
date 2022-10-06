@@ -13,9 +13,18 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+		
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
+			let newDay = Day(context: viewContext)
+			newDay.date = Date()
+			let newMood = Log(context: viewContext)
+			newMood.mood = "🤨"
+			newMood.note = "Everything is quite confusing today"
+			
+			newDay.logs = Set(arrayLiteral: newMood) as NSSet
+			
         }
         do {
             try viewContext.save()

@@ -12,18 +12,34 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Day.date, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<Day>
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+						VStack {
+							Text("Item at \(item.date!, formatter: itemFormatter)")
+							let moods = item.logs! as? Set<Log> ?? []
+							let sortedMoods = moods.sorted {
+								$0.mood ?? "" < $1.mood ?? ""
+							}
+							
+							ForEach(sortedMoods) { log in
+								VStack {
+									Text("\(log.mood!)")
+									Text("\(log.note!)")
+									Text("\(log.day!.date!)")
+								}
+							}
+							
+						}
+                        
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        Text(item.date!, formatter: itemFormatter)
                     }
                 }
                 .onDelete(perform: deleteItems)
