@@ -5,8 +5,8 @@
         <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Log" inverseName="day" inverseEntity="Log"/>
     </entity>
     <entity name="Log" representedClassName="Log" syncable="YES" codeGenerationType="class">
-        <attribute name="mood" optional="YES" attributeType="String"/>
         <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="String"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="logs" inverseEntity="Day"/>
     </entity>
 </model>

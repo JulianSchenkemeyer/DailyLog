@@ -23,14 +23,14 @@ struct ContentView: View {
                     NavigationLink {
 						VStack {
 							Text("Item at \(item.date!, formatter: itemFormatter)")
-							let moods = item.logs! as? Set<Log> ?? []
-							let sortedMoods = moods.sorted {
-								$0.mood ?? "" < $1.mood ?? ""
+							let logs = item.logs! as? Set<Log> ?? []
+							let sortedLogs = logs.sorted {
+								$0.rating ?? "" < $1.rating ?? ""
 							}
 							
-							ForEach(sortedMoods) { log in
+							ForEach(sortedLogs) { log in
 								VStack {
-									Text("\(log.mood!)")
+									Text("\(log.rating!)")
 									Text("\(log.note!)")
 									Text("\(log.day!.date!)")
 								}
@@ -48,31 +48,31 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+//                ToolbarItem {
+//                    Button(action: addItem) {
+//                        Label("Add Item", systemImage: "plus")
+//                    }
+//                }
             }
             Text("Select an item")
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func addItem() {
+//        withAnimation {
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
