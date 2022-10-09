@@ -40,7 +40,7 @@ extension Date {
 	}
 	
 	var weekday: String {
-		self.formatted(.dateTime.weekday(.abbreviated))
+		self.formatted(.dateTime.weekday(.abbreviated).locale(Locale(identifier: "en-US")))
 	}
 	
 	var dayInt: Int {
