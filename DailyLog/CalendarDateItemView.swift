@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct CalendarDateItemView: View {
-	var date: Int
+	var item: CalendarItem
 	var logCount: Int
 	
     var body: some View {
-		Text("\(date)")
+		Text("\(item.dayInt)")
 			.frame(maxWidth: .infinity, minHeight: 40)
 			.background(
-				Circle()
-					.foregroundColor(
-						getIntesity()
-					)
+				ZStack {
+					if item.isToday {
+						Circle()
+							.foregroundColor(.black)
+						Circle()
+							.foregroundColor(.white)
+							.padding(3)
+					}
+					Circle()
+						.foregroundColor(
+							getIntesity()
+						)
+						.padding(item.isToday ? 3 : 0)
+					
+					
+				}
 			)
     }
 	
@@ -28,7 +40,10 @@ struct CalendarDateItemView: View {
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
+	
     static var previews: some View {
-		CalendarDateItemView(date: 2, logCount: 4)
+		let calendarItem = CalendarItem(date: .now)
+		
+		CalendarDateItemView(item: calendarItem , logCount: 4)
     }
 }

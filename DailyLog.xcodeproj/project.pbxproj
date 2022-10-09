@@ -18,6 +18,9 @@
 		B976493128E9D9F0008052CF /* CalendarDateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493028E9D9F0008052CF /* CalendarDateItemView.swift */; };
 		B976493328E9ED16008052CF /* CalendarMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493228E9ED16008052CF /* CalendarMiniView.swift */; };
 		B976493528EDDFB6008052CF /* CalendarHeaderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */; };
+		B976493A28F1D84A008052CF /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493928F1D84A008052CF /* CalendarItem.swift */; };
+		B976493D28F1E7BA008052CF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493C28F1E7BA008052CF /* Date+Ext.swift */; };
+		B976494028F3116C008052CF /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493F28F3116C008052CF /* CalendarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		B976493028E9D9F0008052CF /* CalendarDateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateItemView.swift; sourceTree = "<group>"; };
 		B976493228E9ED16008052CF /* CalendarMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMiniView.swift; sourceTree = "<group>"; };
 		B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderItemView.swift; sourceTree = "<group>"; };
+		B976493928F1D84A008052CF /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
+		B976493C28F1E7BA008052CF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		B976493F28F3116C008052CF /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +71,11 @@
 		B976491828E9CE95008052CF /* DailyLog */ = {
 			isa = PBXGroup;
 			children = (
+				B976493B28F1E7A2008052CF /* Extensions */,
+				B976493628EF2C76008052CF /* Model */,
 				B976491928E9CE96008052CF /* DailyLogApp.swift */,
 				B976491B28E9CE96008052CF /* ContentView.swift */,
-				B976492C28E9D5EE008052CF /* CalendarView.swift */,
+				B976493E28F3111E008052CF /* CalendarView */,
 				B976493228E9ED16008052CF /* CalendarMiniView.swift */,
 				B976493028E9D9F0008052CF /* CalendarDateItemView.swift */,
 				B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */,
@@ -86,6 +94,31 @@
 				B976492028E9CE98008052CF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B976493628EF2C76008052CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B976493928F1D84A008052CF /* CalendarItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B976493B28F1E7A2008052CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B976493C28F1E7BA008052CF /* Date+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B976493E28F3111E008052CF /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				B976492C28E9D5EE008052CF /* CalendarView.swift */,
+				B976493F28F3116C008052CF /* CalendarViewModel.swift */,
+			);
+			path = CalendarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,11 +191,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B976494028F3116C008052CF /* CalendarViewModel.swift in Sources */,
 				B976492D28E9D5EE008052CF /* CalendarView.swift in Sources */,
 				B976493128E9D9F0008052CF /* CalendarDateItemView.swift in Sources */,
 				B976492F28E9D6F2008052CF /* CalendarHeaderView.swift in Sources */,
 				B976493528EDDFB6008052CF /* CalendarHeaderItemView.swift in Sources */,
+				B976493A28F1D84A008052CF /* CalendarItem.swift in Sources */,
 				B976493328E9ED16008052CF /* CalendarMiniView.swift in Sources */,
+				B976493D28F1E7BA008052CF /* Date+Ext.swift in Sources */,
 				B976492328E9CE98008052CF /* Persistence.swift in Sources */,
 				B976491C28E9CE96008052CF /* ContentView.swift in Sources */,
 				B976492628E9CE98008052CF /* DailyLog.xcdatamodeld in Sources */,

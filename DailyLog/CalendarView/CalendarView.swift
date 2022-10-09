@@ -10,14 +10,20 @@ import SwiftUI
 struct CalendarView: View {
 	let columnsConfiguration = Array(Array(repeating: GridItem(.flexible()), count: 7))
 	
+	@StateObject var viewModel = CalendarViewModel()
+	
     var body: some View {
 		VStack {
 			CalendarHeaderView()
-			
+						
 			LazyVGrid(columns: columnsConfiguration) {
 				
-				ForEach(1..<32) { day in
-					CalendarDateItemView(date: day, logCount: Int.random(in: 0..<6))
+				ForEach(viewModel.calendarItems, id: \.date) { day in
+					if !day.isFromPreviousMonth {
+						CalendarDateItemView(item: day, logCount: Int.random(in: 0..<6))
+					} else {
+						Text("")
+					}
 				}
 			}
 		}

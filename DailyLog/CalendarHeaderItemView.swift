@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum Weekday: String, CaseIterable, Identifiable {
-	var id: RawValue { rawValue }
-	
-	case Mon, Tue, Wed, Thu, Fri, Sat, Sun
-}
-
 struct CalendarHeaderItemView: View {
 	let day: Weekday
 	var font: Font = .body
