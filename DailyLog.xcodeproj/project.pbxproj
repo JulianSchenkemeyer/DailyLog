@@ -75,11 +75,9 @@
 				B976493628EF2C76008052CF /* Model */,
 				B976491928E9CE96008052CF /* DailyLogApp.swift */,
 				B976491B28E9CE96008052CF /* ContentView.swift */,
-				B976493E28F3111E008052CF /* CalendarView */,
+				B976494228F3221F008052CF /* Screens */,
 				B976493228E9ED16008052CF /* CalendarMiniView.swift */,
-				B976493028E9D9F0008052CF /* CalendarDateItemView.swift */,
-				B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */,
-				B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */,
+				B976494428F32267008052CF /* Views */,
 				B976491D28E9CE98008052CF /* Assets.xcassets */,
 				B976492228E9CE98008052CF /* Persistence.swift */,
 				B976492428E9CE98008052CF /* DailyLog.xcdatamodeld */,
@@ -119,6 +117,32 @@
 				B976493F28F3116C008052CF /* CalendarViewModel.swift */,
 			);
 			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		B976494228F3221F008052CF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B976493E28F3111E008052CF /* CalendarView */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B976494328F32240008052CF /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				B976493028E9D9F0008052CF /* CalendarDateItemView.swift */,
+				B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */,
+				B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		B976494428F32267008052CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B976494328F32240008052CF /* Calendar */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
