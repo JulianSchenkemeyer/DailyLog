@@ -19,7 +19,7 @@ struct CalendarMiniView: View {
 						VStack {
 							Text(day.rawValue)
 							
-							CalendarDateItemView(date: index, logCount: Int.random(in: 0..<5))
+//							CalendarDateItemView(date: index, logCount: Int.random(in: 0..<5))
 						}.padding(10)
 					}
 				}
