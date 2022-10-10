@@ -21,7 +21,18 @@
 		B976493A28F1D84A008052CF /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493928F1D84A008052CF /* CalendarItem.swift */; };
 		B976493D28F1E7BA008052CF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493C28F1E7BA008052CF /* Date+Ext.swift */; };
 		B976494028F3116C008052CF /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493F28F3116C008052CF /* CalendarViewModel.swift */; };
+		B976494C28F4A3EF008052CF /* DailyLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976494B28F4A3EF008052CF /* DailyLogTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B976494D28F4A3EF008052CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B976490E28E9CE95008052CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B976491528E9CE95008052CF;
+			remoteInfo = DailyLog;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B976491628E9CE95008052CF /* DailyLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +50,19 @@
 		B976493928F1D84A008052CF /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
 		B976493C28F1E7BA008052CF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		B976493F28F3116C008052CF /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		B976494928F4A3EF008052CF /* DailyLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B976494B28F4A3EF008052CF /* DailyLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B976491328E9CE95008052CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B976494628F4A3EF008052CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				B976491828E9CE95008052CF /* DailyLog */,
+				B976494A28F4A3EF008052CF /* DailyLogTests */,
 				B976491728E9CE95008052CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				B976491628E9CE95008052CF /* DailyLog.app */,
+				B976494928F4A3EF008052CF /* DailyLogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +167,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B976494A28F4A3EF008052CF /* DailyLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				B976494B28F4A3EF008052CF /* DailyLogTests.swift */,
+			);
+			path = DailyLogTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +195,24 @@
 			productReference = B976491628E9CE95008052CF /* DailyLog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B976494828F4A3EF008052CF /* DailyLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B976494F28F4A3EF008052CF /* Build configuration list for PBXNativeTarget "DailyLogTests" */;
+			buildPhases = (
+				B976494528F4A3EF008052CF /* Sources */,
+				B976494628F4A3EF008052CF /* Frameworks */,
+				B976494728F4A3EF008052CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B976494E28F4A3EF008052CF /* PBXTargetDependency */,
+			);
+			name = DailyLogTests;
+			productName = DailyLogTests;
+			productReference = B976494928F4A3EF008052CF /* DailyLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +225,10 @@
 				TargetAttributes = {
 					B976491528E9CE95008052CF = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					B976494828F4A3EF008052CF = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = B976491528E9CE95008052CF;
 					};
 				};
 			};
@@ -194,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				B976491528E9CE95008052CF /* DailyLog */,
+				B976494828F4A3EF008052CF /* DailyLogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +258,13 @@
 			files = (
 				B976492128E9CE98008052CF /* Preview Assets.xcassets in Resources */,
 				B976491E28E9CE98008052CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B976494728F4A3EF008052CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +290,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B976494528F4A3EF008052CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B976494C28F4A3EF008052CF /* DailyLogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B976494E28F4A3EF008052CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B976491528E9CE95008052CF /* DailyLog */;
+			targetProxy = B976494D28F4A3EF008052CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B976492728E9CE98008052CF /* Debug */ = {
@@ -370,9 +446,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jschenkemeyer.demo.DailyLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -399,9 +478,48 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jschenkemeyer.demo.DailyLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B976495028F4A3EF008052CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MD4CZRYZD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jschenkemeyer.demo.DailyLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyLog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyLog";
+			};
+			name = Debug;
+		};
+		B976495128F4A3EF008052CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MD4CZRYZD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jschenkemeyer.demo.DailyLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyLog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyLog";
 			};
 			name = Release;
 		};
@@ -422,6 +540,15 @@
 			buildConfigurations = (
 				B976492A28E9CE98008052CF /* Debug */,
 				B976492B28E9CE98008052CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B976494F28F4A3EF008052CF /* Build configuration list for PBXNativeTarget "DailyLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B976495028F4A3EF008052CF /* Debug */,
+				B976495128F4A3EF008052CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
