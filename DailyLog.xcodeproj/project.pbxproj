@@ -21,7 +21,8 @@
 		B976493A28F1D84A008052CF /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493928F1D84A008052CF /* CalendarItem.swift */; };
 		B976493D28F1E7BA008052CF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493C28F1E7BA008052CF /* Date+Ext.swift */; };
 		B976494028F3116C008052CF /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493F28F3116C008052CF /* CalendarViewModel.swift */; };
-		B976494C28F4A3EF008052CF /* DailyLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976494B28F4A3EF008052CF /* DailyLogTests.swift */; };
+		B976494C28F4A3EF008052CF /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976494B28F4A3EF008052CF /* DateExtensionTests.swift */; };
+		B976495428F5FA38008052CF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493C28F1E7BA008052CF /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,7 @@
 		B976493C28F1E7BA008052CF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		B976493F28F3116C008052CF /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		B976494928F4A3EF008052CF /* DailyLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B976494B28F4A3EF008052CF /* DailyLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogTests.swift; sourceTree = "<group>"; };
+		B976494B28F4A3EF008052CF /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +171,7 @@
 		B976494A28F4A3EF008052CF /* DailyLogTests */ = {
 			isa = PBXGroup;
 			children = (
-				B976494B28F4A3EF008052CF /* DailyLogTests.swift */,
+				B976494B28F4A3EF008052CF /* DateExtensionTests.swift */,
 			);
 			path = DailyLogTests;
 			sourceTree = "<group>";
@@ -294,7 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B976494C28F4A3EF008052CF /* DailyLogTests.swift in Sources */,
+				B976494C28F4A3EF008052CF /* DateExtensionTests.swift in Sources */,
+				B976495428F5FA38008052CF /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

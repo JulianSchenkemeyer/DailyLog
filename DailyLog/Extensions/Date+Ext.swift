@@ -10,10 +10,12 @@ import Foundation
 
 extension Date {
 	
+	/// Returns the first date value of the month
 	var startOfMonth: Date {
 		Calendar.current.dateInterval(of: .month, for: self)!.start
 	}
 	
+	/// Returns the end value of the month
 	var endOfMonth: Date {
 		Calendar.current.dateInterval(of: .month, for: self)!.end
 	}
@@ -52,7 +54,7 @@ extension Date {
 	}
 	
 	var monthFullName: String {
-		self.formatted(.dateTime.month(.wide))
+		self.formatted(.dateTime.month(.wide).locale(Locale(identifier: "en-US")))
 	}
 	
 	var startOfCalendarWithPrefixDays: Date {
