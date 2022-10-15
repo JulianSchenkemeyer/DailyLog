@@ -186,12 +186,15 @@
 				B976491228E9CE95008052CF /* Sources */,
 				B976491328E9CE95008052CF /* Frameworks */,
 				B976491428E9CE95008052CF /* Resources */,
+				B9A36FDC28FB012D004E7175 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DailyLog;
+			packageProductDependencies = (
+			);
 			productName = DailyLog;
 			productReference = B976491628E9CE95008052CF /* DailyLog.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +245,8 @@
 				Base,
 			);
 			mainGroup = B976490D28E9CE95008052CF;
+			packageReferences = (
+			);
 			productRefGroup = B976491728E9CE95008052CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,6 +275,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9A36FDC28FB012D004E7175 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B976491228E9CE95008052CF /* Sources */ = {

@@ -5,15 +5,16 @@
 //  Created by Julian Schenkemeyer on 02.10.22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Day.date, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
     private var items: FetchedResults<Day>
 
     var body: some View {
@@ -21,23 +22,22 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-						VStack {
-							Text("Item at \(item.date!, formatter: itemFormatter)")
-							let logs = item.logs! as? Set<Log> ?? []
-							let sortedLogs = logs.sorted {
-								$0.rating ?? "" < $1.rating ?? ""
-							}
-							
-							ForEach(sortedLogs) { log in
-								VStack {
-									Text("\(log.rating!)")
-									Text("\(log.note!)")
-									Text("\(log.day!.date!)")
-								}
-							}
-							
-						}
-                        
+                        VStack {
+                            Text("Item at \(item.date!, formatter: itemFormatter)")
+                            let logs = item.logs! as? Set<Log> ?? []
+                            let sortedLogs = logs.sorted {
+                                $0.rating ?? "" < $1.rating ?? ""
+                            }
+
+                            ForEach(sortedLogs) { log in
+                                VStack {
+                                    Text("\(log.rating!)")
+                                    Text("\(log.note!)")
+                                    Text("\(log.day!.date!)")
+                                }
+                            }
+                        }
+
                     } label: {
                         Text(item.date!, formatter: itemFormatter)
                     }
@@ -66,8 +66,10 @@ struct ContentView: View {
 //            do {
 //                try viewContext.save()
 //            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//           // Replace this implementation with code to handle the error appropriately.
+//          // fatalError() causes the application to generate a crash log and
+//	//terminate. You should not use this function in a shipping application,
+//	//although it may be useful during development.
 //                let nsError = error as NSError
 //                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
 //            }
@@ -82,7 +84,9 @@ struct ContentView: View {
                 try viewContext.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                // fatalError() causes the application to generate a crash log and
+				// terminate. You should not use this function in a shipping
+				// application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

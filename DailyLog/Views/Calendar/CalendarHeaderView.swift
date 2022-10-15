@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CalendarHeaderView: View {
-//	let daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-	var font: Font = .body
-	
-	var body: some View {
-		HStack {
-			ForEach(Weekday.allCases) { dayOfWeek in
-				CalendarHeaderItemView(day: dayOfWeek)
-			}
-		}
-	}
+    //	let daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    var font: Font = .body
+
+    var body: some View {
+        HStack {
+            ForEach(Weekday.allCases) { dayOfWeek in
+                CalendarHeaderItemView(day: dayOfWeek)
+            }
+        }
+    }
 }
 
 struct CalendarHeaderView_Previews: PreviewProvider {
