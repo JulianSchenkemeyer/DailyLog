@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B934FC0128FC474B009DE76B /* CalendarItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934FC0028FC474B009DE76B /* CalendarItemTests.swift */; };
+		B934FC0228FC48F1009DE76B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493928F1D84A008052CF /* CalendarItem.swift */; };
 		B976491A28E9CE96008052CF /* DailyLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976491928E9CE96008052CF /* DailyLogApp.swift */; };
 		B976491C28E9CE96008052CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976491B28E9CE96008052CF /* ContentView.swift */; };
 		B976491E28E9CE98008052CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B976491D28E9CE98008052CF /* Assets.xcassets */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B934FC0028FC474B009DE76B /* CalendarItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemTests.swift; sourceTree = "<group>"; };
 		B976491628E9CE95008052CF /* DailyLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B976491928E9CE96008052CF /* DailyLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogApp.swift; sourceTree = "<group>"; };
 		B976491B28E9CE96008052CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				B976494B28F4A3EF008052CF /* DateExtensionTests.swift */,
+				B934FC0028FC474B009DE76B /* CalendarItemTests.swift */,
 			);
 			path = DailyLogTests;
 			sourceTree = "<group>";
@@ -320,7 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B934FC0128FC474B009DE76B /* CalendarItemTests.swift in Sources */,
 				B976494C28F4A3EF008052CF /* DateExtensionTests.swift in Sources */,
+				B934FC0228FC48F1009DE76B /* CalendarItem.swift in Sources */,
 				B976495428F5FA38008052CF /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
