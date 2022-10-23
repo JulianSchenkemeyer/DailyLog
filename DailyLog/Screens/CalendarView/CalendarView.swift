@@ -19,7 +19,7 @@ struct CalendarView: View {
             LazyVGrid(columns: columnsConfiguration) {
                 ForEach(viewModel.calendarItems, id: \.date) { day in
                     if !day.isFromPreviousMonth {
-                        CalendarDateItemView(item: day, logCount: Int.random(in: 0 ..< 6))
+						CalendarDateItemView(item: day, logCount: day.getLogCount)
                     } else {
                         Text("")
                     }

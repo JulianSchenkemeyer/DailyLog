@@ -13,11 +13,11 @@ enum Weekday: String, CaseIterable, Identifiable {
     case mon, tue, wed, thu, fri, sat, sun
 }
 
-///
 struct CalendarItem {
     let date: Date
     let dayInt: Int
     let day: Weekday
+	let data: Day?
 
     var isFromPreviousMonth: Bool {
         date.monthInt < Date().monthInt
@@ -27,9 +27,15 @@ struct CalendarItem {
         date.dayInt == Date().dayInt && !isFromPreviousMonth
     }
 
-    init(date: Date) {
+	var getLogCount: Int {
+		guard let data = self.data, let logs = data.logs else { return 0 }
+		return logs.count
+	}
+
+	init(date: Date, cdData: Day? = nil) {
         self.date = date
         dayInt = date.dayInt
         day = Weekday(rawValue: date.weekday.lowercased())!
+		data = cdData
     }
 }
