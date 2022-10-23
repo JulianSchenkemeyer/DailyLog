@@ -12,7 +12,7 @@ struct CalendarHeaderItemView: View {
     var font: Font = .body
 
     var body: some View {
-        Text(day.rawValue)
+		Text(day.rawValue.capitalized)
             .font(font)
             .fontWeight(.black)
             .foregroundColor(.teal)
