@@ -13,7 +13,9 @@ enum Weekday: String, CaseIterable, Identifiable {
     case mon, tue, wed, thu, fri, sat, sun
 }
 
-struct CalendarItem {
+struct CalendarItem: Identifiable {
+	let id = UUID()
+
     let date: Date
     let dayInt: Int
     let day: Weekday

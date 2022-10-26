@@ -14,19 +14,22 @@ struct CalendarView: View {
 
     var body: some View {
         VStack {
-            CalendarHeaderView()
+			VStack {
+				CalendarHeaderView()
+				
+				LazyVGrid(columns: columnsConfiguration) {
+					ForEach(viewModel.calendarItems, id: \.date) { day in
+						if !day.isFromPreviousMonth {
+							CalendarDateItemView(item: day, logCount: day.getLogCount)
+						} else {
+							Text("")
+						}
+					}
+				}
+			}.padding()
 
-            LazyVGrid(columns: columnsConfiguration) {
-                ForEach(viewModel.calendarItems, id: \.date) { day in
-                    if !day.isFromPreviousMonth {
-						CalendarDateItemView(item: day, logCount: day.getLogCount)
-                    } else {
-                        Text("")
-                    }
-                }
-            }
+			LogListView(listData: viewModel.calendarItems)
         }
-        .padding()
     }
 }
 
