@@ -16,7 +16,7 @@ struct CalendarView: View {
         VStack {
 			VStack {
 				CalendarHeaderView()
-				
+
 				LazyVGrid(columns: columnsConfiguration) {
 					ForEach(viewModel.calendarItems, id: \.date) { day in
 						if !day.isFromPreviousMonth {

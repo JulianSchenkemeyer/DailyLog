@@ -13,8 +13,9 @@ enum Weekday: String, CaseIterable, Identifiable {
     case mon, tue, wed, thu, fri, sat, sun
 }
 
-struct CalendarItem: Identifiable {
-	let id = UUID()
+struct CalendarItem: Identifiable, Hashable {
+	static var counter = 0
+	let id: Int
 
     let date: Date
     let dayInt: Int
@@ -34,7 +35,15 @@ struct CalendarItem: Identifiable {
 		return logs.count
 	}
 
+	static func generateId() -> Int {
+		counter += 1
+		print("---calendarItems counter: \(counter)")
+		return counter
+	}
+
 	init(date: Date, cdData: Day? = nil) {
+		id = CalendarItem.generateId()
+
         self.date = date
         dayInt = date.dayInt
         day = Weekday(rawValue: date.weekday.lowercased())!
