@@ -31,7 +31,7 @@ struct LogListView: View {
 						}
 						.padding(.horizontal, 20)
 						.padding(.vertical, 10)
-						.id("\(item.id)")
+						.id(item.id)
 					}
 				}
 			}

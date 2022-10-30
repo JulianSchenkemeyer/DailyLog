@@ -36,7 +36,7 @@ final class CalendarViewModel: ObservableObject {
 				// Create a CalendarItem without a Core Data object
 				let newCalendarItem = CalendarItem(date: calendarIterator)
 				if newCalendarItem.isToday {
-					currentPosition = "\(newCalendarItem.id)"
+					currentPosition = newCalendarItem.id
 				}
 				calendarItems.append(newCalendarItem)
 				calendarIterator = Calendar.current.date(byAdding: .day, value: 1, to: calendarIterator)!
@@ -51,7 +51,7 @@ final class CalendarViewModel: ObservableObject {
 
 			let newCalendarItem = CalendarItem(date: calendarIterator, cdData: data)
 			if newCalendarItem.isToday {
-				currentPosition = "\(newCalendarItem.id)"
+				currentPosition = newCalendarItem.id
 			}
 			calendarItems.append(newCalendarItem)
 			calendarIterator = Calendar.current.date(byAdding: .day, value: 1, to: calendarIterator)!

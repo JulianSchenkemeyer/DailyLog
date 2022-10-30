@@ -14,8 +14,7 @@ enum Weekday: String, CaseIterable, Identifiable {
 }
 
 struct CalendarItem: Identifiable, Hashable {
-	static var counter = 0
-	let id: Int
+	let id: String
 
     let date: Date
     let dayInt: Int
@@ -35,13 +34,8 @@ struct CalendarItem: Identifiable, Hashable {
 		return logs.count
 	}
 
-	static func generateId() -> Int {
-		counter += 1
-		return counter
-	}
-
 	init(date: Date, cdData: Day? = nil) {
-		id = CalendarItem.generateId()
+		id = date.formatted(.dateTime.year().month(.twoDigits).day(.twoDigits))
 
         self.date = date
         dayInt = date.dayInt

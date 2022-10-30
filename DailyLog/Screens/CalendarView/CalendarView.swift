@@ -22,7 +22,7 @@ struct CalendarView: View {
 						if !day.isFromPreviousMonth {
 							CalendarDateItemView(item: day, logCount: day.getLogCount)
 								.onTapGesture {
-									viewModel.currentPosition = "\(day.id)"
+									viewModel.currentPosition = day.id
 								}
 						} else {
 							Text("")
