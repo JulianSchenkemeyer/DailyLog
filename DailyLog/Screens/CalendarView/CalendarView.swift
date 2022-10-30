@@ -21,6 +21,9 @@ struct CalendarView: View {
 					ForEach(viewModel.calendarItems, id: \.date) { day in
 						if !day.isFromPreviousMonth {
 							CalendarDateItemView(item: day, logCount: day.getLogCount)
+								.onTapGesture {
+									viewModel.currentPosition = "\(day.id)"
+								}
 						} else {
 							Text("")
 						}
@@ -28,7 +31,7 @@ struct CalendarView: View {
 				}
 			}.padding()
 
-			LogListView(listData: viewModel.calendarItems)
+			LogListView(currentPostion: $viewModel.currentPosition, listData: viewModel.calendarItems)
         }
     }
 }

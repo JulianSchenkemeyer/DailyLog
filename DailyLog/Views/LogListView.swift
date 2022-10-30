@@ -8,22 +8,14 @@
 import SwiftUI
 
 struct LogListView: View {
+	@Binding var currentPostion: String
 	var listData: [CalendarItem]
 
 	var body: some View {
-		ScrollViewReader { value in
-
-			Button("Jump to #8") {
-				value.scrollTo(8, anchor: .top)
-			}
-			.padding()
+		ScrollViewReader { proxy in
 
 			ScrollView {
 				ForEach(listData) { item in
-					LazyVStack(alignment: .leading) {
-						Text(item.date.formatted(.dateTime.day().month(.wide).year()))
-							.font(.headline)
-							.bold()
 					// Only show entries of the current month
 					if !item.isFromPreviousMonth {
 						VStack(alignment: .leading) {
@@ -31,8 +23,6 @@ struct LogListView: View {
 								.font(.headline)
 								.bold()
 
-						if let data = item.data, let logs = data.logs {
-							LogListItems(logs: logs)
 							if let data = item.data, let logs = data.logs {
 								LogListItems(logs: logs)
 							} else {
@@ -46,6 +36,12 @@ struct LogListView: View {
 				}
 			}
 			.listStyle(.plain)
+			.onAppear {
+				proxy.scrollTo("\(currentPostion)", anchor: .top)
+			}
+			.onChange(of: currentPostion) { newPosition in
+				proxy.scrollTo("\(newPosition)", anchor: .top)
+			}
 		}
 	}
 }
@@ -56,17 +52,6 @@ struct LogListItems: View {
 	var body: some View {
 		if let logs = logs.allObjects as? [Log] {
 			ForEach(logs) { data in
-				HStack {
-					Text(data.rating ?? "")
-					Text(data.note ?? "")
-				}
-				.frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
-				.padding(10)
-				.background(
-					RoundedRectangle(cornerRadius: 20)
-						.foregroundColor(.cyan)
-						.opacity(0.3)
-				)
 				LogListItem(rating: data.rating ?? "", note: data.note ?? "")
 				.listRowSeparator(.hidden)
 			}
@@ -100,6 +85,6 @@ struct LogListItem: View {
 
 struct LogListView_Previews: PreviewProvider {
 	static var previews: some View {
-		LogListView(listData: [CalendarItem(date: .now), CalendarItem(date: .distantPast)])
+		LogListView(currentPostion: .constant(""), listData: [CalendarItem(date: .now), CalendarItem(date: .distantPast)])
 	}
 }

@@ -37,7 +37,6 @@ struct CalendarItem: Identifiable, Hashable {
 
 	static func generateId() -> Int {
 		counter += 1
-		print("---calendarItems counter: \(counter)")
 		return counter
 	}
 

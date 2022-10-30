@@ -13,6 +13,7 @@ final class CalendarViewModel: ObservableObject {
 	let endDate: Date
 
 	@Published var calendarItems: [CalendarItem] = []
+	@Published var currentPosition: String = ""
 
 	init() {
 		let today = Date()
@@ -29,9 +30,14 @@ final class CalendarViewModel: ObservableObject {
 
 		var cdDataIterator = 0
 		var calendarIterator = start
+
 		while calendarIterator < end {
 			guard cdData.count > cdDataIterator else {
+				// Create a CalendarItem without a Core Data object
 				let newCalendarItem = CalendarItem(date: calendarIterator)
+				if newCalendarItem.isToday {
+					currentPosition = "\(newCalendarItem.id)"
+				}
 				calendarItems.append(newCalendarItem)
 				calendarIterator = Calendar.current.date(byAdding: .day, value: 1, to: calendarIterator)!
 				continue
@@ -44,6 +50,9 @@ final class CalendarViewModel: ObservableObject {
 			}
 
 			let newCalendarItem = CalendarItem(date: calendarIterator, cdData: data)
+			if newCalendarItem.isToday {
+				currentPosition = "\(newCalendarItem.id)"
+			}
 			calendarItems.append(newCalendarItem)
 			calendarIterator = Calendar.current.date(byAdding: .day, value: 1, to: calendarIterator)!
 		}
@@ -51,7 +60,7 @@ final class CalendarViewModel: ObservableObject {
 		return calendarItems
 	}
 
-	var coreDataRequest: NSFetchRequest<Day> {
+	private var coreDataRequest: NSFetchRequest<Day> {
 		let request = Day.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(keyPath: \Day.date, ascending: true)]
 		request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)",
@@ -60,7 +69,7 @@ final class CalendarViewModel: ObservableObject {
 		return request
 	}
 
-	func getCoreDataEntriesForDisplayedItems() -> [Day] {
+	private func getCoreDataEntriesForDisplayedItems() -> [Day] {
 		let viewContext = PersistenceController.shared.container.viewContext
 		let days = (try? viewContext.fetch(coreDataRequest)) ?? []
 
