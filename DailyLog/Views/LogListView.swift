@@ -24,14 +24,25 @@ struct LogListView: View {
 						Text(item.date.formatted(.dateTime.day().month(.wide).year()))
 							.font(.headline)
 							.bold()
+					// Only show entries of the current month
+					if !item.isFromPreviousMonth {
+						VStack(alignment: .leading) {
+							Text(item.date.formatted(.dateTime.day().month(.wide).year()))
+								.font(.headline)
+								.bold()
 
 						if let data = item.data, let logs = data.logs {
 							LogListItems(logs: logs)
+							if let data = item.data, let logs = data.logs {
+								LogListItems(logs: logs)
+							} else {
+								LogListItem(rating: "", note: "")
+							}
 						}
+						.padding(.horizontal, 20)
+						.padding(.vertical, 10)
+						.id("\(item.id)")
 					}
-					.padding(.horizontal, 20)
-					.padding(.vertical, 10)
-					.id(item.id)
 				}
 			}
 			.listStyle(.plain)
@@ -56,9 +67,34 @@ struct LogListItems: View {
 						.foregroundColor(.cyan)
 						.opacity(0.3)
 				)
+				LogListItem(rating: data.rating ?? "", note: data.note ?? "")
 				.listRowSeparator(.hidden)
 			}
 		}
+	}
+}
+
+struct LogListItem: View {
+	let rating: String
+	let note: String
+
+	var body: some View {
+		HStack {
+			Text(rating)
+			Text(note)
+		}
+		.frame(maxWidth: .infinity, minHeight: 50, alignment: .leading)
+		.padding(10)
+		.background(
+			RoundedRectangle(cornerRadius: 20)
+				.foregroundColor(.cyan)
+				.opacity(0.3)
+		)
+	}
+
+	init(rating: String, note: String) {
+		self.rating = rating
+		self.note = note.isEmpty ? "No notes" : note
 	}
 }
 
