@@ -23,8 +23,8 @@ struct LogListView: View {
 								.font(.headline)
 								.bold()
 
-							if let data = item.data, let logs = data.logs {
-								LogListItems(logs: logs)
+							if item.logs.count > 0 {
+								LogListItems(logs: item.logs)
 							} else {
 								LogListItem(rating: "", note: "")
 							}
@@ -47,14 +47,12 @@ struct LogListView: View {
 }
 
 struct LogListItems: View {
-	var logs: NSSet
+	var logs: [Log]
 
 	var body: some View {
-		if let logs = logs.allObjects as? [Log] {
-			ForEach(logs) { data in
-				LogListItem(rating: data.rating ?? "", note: data.note ?? "")
+		ForEach(logs) { data in
+			LogListItem(rating: data.rating ?? "", note: data.note ?? "")
 				.listRowSeparator(.hidden)
-			}
 		}
 	}
 }

@@ -19,7 +19,7 @@ struct CalendarItem: Identifiable, Hashable {
     let date: Date
     let dayInt: Int
     let day: Weekday
-	let data: Day?
+	let logs: [Log]
 
     var isFromPreviousMonth: Bool {
         date.monthInt < Date().monthInt
@@ -30,7 +30,6 @@ struct CalendarItem: Identifiable, Hashable {
     }
 
 	var getLogCount: Int {
-		guard let data = self.data, let logs = data.logs else { return 0 }
 		return logs.count
 	}
 
@@ -40,6 +39,11 @@ struct CalendarItem: Identifiable, Hashable {
         self.date = date
         dayInt = date.dayInt
         day = Weekday(rawValue: date.weekday.lowercased())!
-		data = cdData
+
+		if let logsSet = cdData?.logs, let logsArray = logsSet.allObjects as? [Log] {
+			self.logs = logsArray
+		} else {
+			self.logs = []
+		}
     }
 }
