@@ -23,11 +23,7 @@ struct LogListView: View {
 								.font(.headline)
 								.bold()
 
-							if item.logs.count > 0 {
-								LogListItems(logs: item.logs)
-							} else {
-								LogListItem(rating: "", note: "")
-							}
+							LogListItems(logs: item.logs)
 						}
 						.padding(.horizontal, 20)
 						.padding(.vertical, 10)
@@ -50,16 +46,29 @@ struct LogListItems: View {
 	var logs: [Log]
 
 	var body: some View {
-		ForEach(logs) { data in
-			LogListItem(rating: data.rating ?? "", note: data.note ?? "")
+		if logs.count > 0 {
+			ForEach(logs) { data in
+				LogListItem(
+					rating: data.rating ?? "",
+					note: data.note ?? "",
+					backgroundColor: .cyan
+				)
 				.listRowSeparator(.hidden)
+			}
+		} else {
+			LogListItem(
+				rating: " ",
+				note: "no notes for this day",
+				backgroundColor: .gray.opacity(0.5))
 		}
+
 	}
 }
 
 struct LogListItem: View {
 	let rating: String
 	let note: String
+	let backgroundColor: Color
 
 	var body: some View {
 		HStack {
@@ -70,14 +79,9 @@ struct LogListItem: View {
 		.padding(10)
 		.background(
 			RoundedRectangle(cornerRadius: 20)
-				.foregroundColor(.cyan)
+				.foregroundColor(backgroundColor)
 				.opacity(0.3)
 		)
-	}
-
-	init(rating: String, note: String) {
-		self.rating = rating
-		self.note = note.isEmpty ? "No notes" : note
 	}
 }
 
