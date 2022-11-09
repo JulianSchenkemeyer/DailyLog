@@ -13,7 +13,7 @@ struct DailyLogApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LogOverviewView()
+            ContentView()
         }
     }
 }
