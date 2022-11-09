@@ -23,11 +23,15 @@ final class CalendarViewModel: ObservableObject {
 		endDate = today.endOfMonth
 
 		// Initialise data
+		loadData()
+	}
+
+	func loadData() {
 		let days = getCoreDataEntriesForDisplayedItems()
 		calendarItems = createCalendarItemsForDisplayedMonth(start: startDateWithPrefix, end: endDate, cdData: days)
 	}
 
-	func createCalendarItemsForDisplayedMonth(start: Date, end: Date, cdData: [Day]) -> [CalendarItem] {
+	private func createCalendarItemsForDisplayedMonth(start: Date, end: Date, cdData: [Day]) -> [CalendarItem] {
 		var calendarItems: [CalendarItem] = []
 
 		var cdDataIterator = 0

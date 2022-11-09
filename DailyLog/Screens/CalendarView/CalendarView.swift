@@ -46,6 +46,9 @@ struct CalendarView: View {
 		.sheet(isPresented: $presentAddLogEntrySheet) {
 			AddLogEntryView(isShown: $presentAddLogEntrySheet)
 				.presentationDetents([.medium])
+				.onDisappear {
+					viewModel.loadData()
+				}
 		}
     }
 }
