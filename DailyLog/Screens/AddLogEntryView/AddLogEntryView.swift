@@ -35,6 +35,7 @@ struct AddLogEntryView: View {
 			Button {
 				print(viewModel.rating, viewModel.note)
 				viewModel.saveLogEntry()
+				isShown = false
 			} label: {
 				Text("Save new log entry")
 			}
