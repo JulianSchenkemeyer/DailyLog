@@ -8,29 +8,13 @@
 import SwiftUI
 
 struct LogOverviewView: View {
-    let columnsConfiguration = Array(Array(repeating: GridItem(.flexible()), count: 7))
-
     @StateObject var viewModel = LogOverviewViewModel()
 	@State private var presentAddLogEntrySheet = false
 
     var body: some View {
 		VStack {
-			VStack {
-				CalendarHeaderView()
-
-				LazyVGrid(columns: columnsConfiguration) {
-					ForEach(viewModel.calendarItems, id: \.date) { day in
-						if !day.isFromPreviousMonth {
-							CalendarDateItemView(item: day, logCount: day.getLogCount)
-								.onTapGesture {
-									viewModel.currentPosition = day.id
-								}
-						} else {
-							Text("")
-						}
-					}
-				}
-			}.padding()
+			CalendarVIew(calendarItems: $viewModel.calendarItems,
+						 currentPosition: $viewModel.currentPosition)
 
 			LogListView(currentPostion: $viewModel.currentPosition, listData: viewModel.calendarItems)
 

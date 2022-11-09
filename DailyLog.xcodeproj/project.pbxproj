@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B926DB48291BA9EF009CD70A /* AddLogEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B926DB47291BA9EF009CD70A /* AddLogEntryViewModel.swift */; };
+		B926DB4D291C29A9009CD70A /* CalendarVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B926DB4C291C29A9009CD70A /* CalendarVIew.swift */; };
 		B934FC0128FC474B009DE76B /* CalendarItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934FC0028FC474B009DE76B /* CalendarItemTests.swift */; };
 		B934FC0228FC48F1009DE76B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493928F1D84A008052CF /* CalendarItem.swift */; };
 		B934FC042905959C009DE76B /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B934FC032905959C009DE76B /* LogListView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		B926DB47291BA9EF009CD70A /* AddLogEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogEntryViewModel.swift; sourceTree = "<group>"; };
+		B926DB4C291C29A9009CD70A /* CalendarVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVIew.swift; sourceTree = "<group>"; };
 		B934FC0028FC474B009DE76B /* CalendarItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemTests.swift; sourceTree = "<group>"; };
 		B934FC032905959C009DE76B /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		B976491628E9CE95008052CF /* DailyLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B926DB4E291C29B9009CD70A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B976493028E9D9F0008052CF /* CalendarDateItemView.swift */,
+				B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */,
+				B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B976490D28E9CE95008052CF = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +175,8 @@
 		B976494328F32240008052CF /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				B976493028E9D9F0008052CF /* CalendarDateItemView.swift */,
-				B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */,
-				B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */,
+				B926DB4E291C29B9009CD70A /* Components */,
+				B926DB4C291C29A9009CD70A /* CalendarVIew.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 			files = (
 				B976494028F3116C008052CF /* LogOverviewViewModel.swift in Sources */,
 				B976492D28E9D5EE008052CF /* LogOverviewView.swift in Sources */,
+				B926DB4D291C29A9009CD70A /* CalendarVIew.swift in Sources */,
 				B9875FB72917BC0200ECB978 /* AddLogEntryView.swift in Sources */,
 				B976493128E9D9F0008052CF /* CalendarDateItemView.swift in Sources */,
 				B976492F28E9D6F2008052CF /* CalendarHeaderView.swift in Sources */,
