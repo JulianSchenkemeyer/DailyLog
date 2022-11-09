@@ -17,14 +17,14 @@
 		B976492128E9CE98008052CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B976492028E9CE98008052CF /* Preview Assets.xcassets */; };
 		B976492328E9CE98008052CF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976492228E9CE98008052CF /* Persistence.swift */; };
 		B976492628E9CE98008052CF /* DailyLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B976492428E9CE98008052CF /* DailyLog.xcdatamodeld */; };
-		B976492D28E9D5EE008052CF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976492C28E9D5EE008052CF /* CalendarView.swift */; };
+		B976492D28E9D5EE008052CF /* LogOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976492C28E9D5EE008052CF /* LogOverviewView.swift */; };
 		B976492F28E9D6F2008052CF /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */; };
 		B976493128E9D9F0008052CF /* CalendarDateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493028E9D9F0008052CF /* CalendarDateItemView.swift */; };
 		B976493328E9ED16008052CF /* CalendarMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493228E9ED16008052CF /* CalendarMiniView.swift */; };
 		B976493528EDDFB6008052CF /* CalendarHeaderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */; };
 		B976493A28F1D84A008052CF /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493928F1D84A008052CF /* CalendarItem.swift */; };
 		B976493D28F1E7BA008052CF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493C28F1E7BA008052CF /* Date+Ext.swift */; };
-		B976494028F3116C008052CF /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493F28F3116C008052CF /* CalendarViewModel.swift */; };
+		B976494028F3116C008052CF /* LogOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493F28F3116C008052CF /* LogOverviewViewModel.swift */; };
 		B976494C28F4A3EF008052CF /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976494B28F4A3EF008052CF /* DateExtensionTests.swift */; };
 		B976495428F5FA38008052CF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976493C28F1E7BA008052CF /* Date+Ext.swift */; };
 		B9875FB72917BC0200ECB978 /* AddLogEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9875FB62917BC0200ECB978 /* AddLogEntryView.swift */; };
@@ -51,14 +51,14 @@
 		B976492028E9CE98008052CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B976492228E9CE98008052CF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B976492528E9CE98008052CF /* DailyLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyLog.xcdatamodel; sourceTree = "<group>"; };
-		B976492C28E9D5EE008052CF /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		B976492C28E9D5EE008052CF /* LogOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOverviewView.swift; sourceTree = "<group>"; };
 		B976492E28E9D6F2008052CF /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		B976493028E9D9F0008052CF /* CalendarDateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateItemView.swift; sourceTree = "<group>"; };
 		B976493228E9ED16008052CF /* CalendarMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMiniView.swift; sourceTree = "<group>"; };
 		B976493428EDDFB6008052CF /* CalendarHeaderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderItemView.swift; sourceTree = "<group>"; };
 		B976493928F1D84A008052CF /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
 		B976493C28F1E7BA008052CF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		B976493F28F3116C008052CF /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		B976493F28F3116C008052CF /* LogOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOverviewViewModel.swift; sourceTree = "<group>"; };
 		B976494928F4A3EF008052CF /* DailyLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B976494B28F4A3EF008052CF /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		B9875FB62917BC0200ECB978 /* AddLogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogEntryView.swift; sourceTree = "<group>"; };
@@ -142,20 +142,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B976493E28F3111E008052CF /* CalendarView */ = {
+		B976493E28F3111E008052CF /* LogOverviewView */ = {
 			isa = PBXGroup;
 			children = (
-				B976492C28E9D5EE008052CF /* CalendarView.swift */,
-				B976493F28F3116C008052CF /* CalendarViewModel.swift */,
+				B976492C28E9D5EE008052CF /* LogOverviewView.swift */,
+				B976493F28F3116C008052CF /* LogOverviewViewModel.swift */,
 			);
-			path = CalendarView;
+			path = LogOverviewView;
 			sourceTree = "<group>";
 		};
 		B976494228F3221F008052CF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				B9875FB52917BBC300ECB978 /* AddLogEntryView */,
-				B976493E28F3111E008052CF /* CalendarView */,
+				B976493E28F3111E008052CF /* LogOverviewView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -322,8 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B976494028F3116C008052CF /* CalendarViewModel.swift in Sources */,
-				B976492D28E9D5EE008052CF /* CalendarView.swift in Sources */,
+				B976494028F3116C008052CF /* LogOverviewViewModel.swift in Sources */,
+				B976492D28E9D5EE008052CF /* LogOverviewView.swift in Sources */,
 				B9875FB72917BC0200ECB978 /* AddLogEntryView.swift in Sources */,
 				B976493128E9D9F0008052CF /* CalendarDateItemView.swift in Sources */,
 				B976492F28E9D6F2008052CF /* CalendarHeaderView.swift in Sources */,

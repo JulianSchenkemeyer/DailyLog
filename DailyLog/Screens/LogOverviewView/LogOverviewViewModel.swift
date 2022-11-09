@@ -1,5 +1,5 @@
 //
-//  CalendarViewModel.swift
+//  LogOverviewViewModel.swift
 //  DailyLog
 //
 //  Created by Julian Schenkemeyer on 09.10.22.
@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-final class CalendarViewModel: ObservableObject {
+final class LogOverviewViewModel: ObservableObject {
 	let viewContext = PersistenceController.shared.container.viewContext
 
 	let startDateWithPrefix: Date

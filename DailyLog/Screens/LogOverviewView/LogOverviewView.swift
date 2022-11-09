@@ -1,5 +1,5 @@
 //
-//  CalendarView.swift
+//  LogOverviewView.swift
 //  DailyLog
 //
 //  Created by Julian Schenkemeyer on 02.10.22.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CalendarView: View {
+struct LogOverviewView: View {
     let columnsConfiguration = Array(Array(repeating: GridItem(.flexible()), count: 7))
 
-    @StateObject var viewModel = CalendarViewModel()
+    @StateObject var viewModel = LogOverviewViewModel()
 	@State private var presentAddLogEntrySheet = false
 
     var body: some View {
@@ -55,6 +55,6 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        LogOverviewView()
     }
 }
