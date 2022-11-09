@@ -9,6 +9,8 @@ import CoreData
 import Foundation
 
 final class CalendarViewModel: ObservableObject {
+	let viewContext = PersistenceController.shared.container.viewContext
+
 	let startDateWithPrefix: Date
 	let endDate: Date
 
@@ -70,7 +72,6 @@ final class CalendarViewModel: ObservableObject {
 	}
 
 	private func getCoreDataEntriesForDisplayedItems() -> [Day] {
-		let viewContext = PersistenceController.shared.container.viewContext
 		let days = (try? viewContext.fetch(coreDataRequest)) ?? []
 
 		return days

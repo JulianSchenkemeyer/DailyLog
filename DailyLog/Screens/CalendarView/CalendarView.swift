@@ -11,9 +11,10 @@ struct CalendarView: View {
     let columnsConfiguration = Array(Array(repeating: GridItem(.flexible()), count: 7))
 
     @StateObject var viewModel = CalendarViewModel()
+	@State private var presentAddLogEntrySheet = true
 
     var body: some View {
-        VStack {
+		VStack {
 			VStack {
 				CalendarHeaderView()
 
@@ -32,7 +33,11 @@ struct CalendarView: View {
 			}.padding()
 
 			LogListView(currentPostion: $viewModel.currentPosition, listData: viewModel.calendarItems)
-        }
+		}
+		.sheet(isPresented: $presentAddLogEntrySheet) {
+			AddLogEntryView(isShown: $presentAddLogEntrySheet)
+				.presentationDetents([.medium])
+		}
     }
 }
 
