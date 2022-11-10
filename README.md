@@ -1,6 +1,10 @@
 # Daily Log
 
-// Insert Picture
+<div>
+  <img src="/screenshots/mainscreen.png" height="500">
+  <img src="/screenshots/addEntryScreen.png" height="500">
+</div>
+
 
 Daily Log is a simple app, enabling its users to document events affecting their mood through a simple emoji-based rating system along with a description. While the such an app could be quite useful for some people, the main purpose of Daily Log is to practice the use of different patterns and frameworks in a realistic environment.
 
